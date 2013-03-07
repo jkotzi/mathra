@@ -1,0 +1,21 @@
+%h1 Listing rowempls
+
+%table
+  %tr
+    %th Warehouse
+    %th Employee
+    %th
+    %th
+    %th
+
+  - @rowempls.each do |rowempl|
+    %tr
+      %td= rowempl.warehouse_id
+      %td= rowempl.employee_id
+      %td= link_to 'Show', rowempl
+      %td= link_to 'Edit', edit_rowempl_path(rowempl)
+      %td= link_to 'Destroy', rowempl, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Rowempl', new_rowempl_path

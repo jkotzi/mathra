@@ -1,0 +1,19 @@
+= simple_form_for(@employee) do |f|
+  = f.error_notification
+
+  .form-inputs
+
+    %label Login
+    %input{:type => "text", :"ng-model" => "em.login"}
+    %label Surname
+    %input{:type => "text", :"ng-model" => "em.surname"}
+    %label Name
+    %input{:type => "text", :"ng-model" => "em.name"}
+
+    = #f.input :login
+    = #f.input :surname
+    = #f.input :name
+
+/
+  .form-actions
+    = #f.button :submit

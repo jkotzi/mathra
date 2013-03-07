@@ -1,0 +1,43 @@
+= simple_form_for(@warehouse) do |f|
+  = f.error_notification
+
+  .row-fluid
+    .span3
+      %label PC Name
+      %input{:type => "text", :"ng-model" => "w.name"}
+      %label Serial
+      %input{:type => "text", :"ng-model" => "w.serial"}
+      %label Hardware Type
+      %select{:type => "text", :name => "hardwaretype_id", :id => "hardwaretype_id", :"ng-model" => "w.hardwaretype_id"}
+        %option{:"ng-repeat" => "entry in hardwaretypes|orderBy:'name'", :value => "{{entry.id}}", :"ng-selected" => "checkWSel(entry.id)"}
+          {{entry.name}}
+
+      %label Purchased Date
+      %input{:type => "text", :name => "pdate", :id => "pdate", :"ng-model" => "w.pdate"}
+
+      %label{:"ng-show" => "editID == -1"} Current Employee
+      %select{:"ng-model" => "w.employee_id", :"ng-show" => "editID == -1", :size => "1"}
+        %option{:"ng-repeat" => "entry in employees|orderBy:'surname'", :value => "{{entry.id}}"}
+          {{entry.surname + " " + entry.name}}
+
+      %label{:"ng-show" => "editID >= 0"} Employee History
+      %li{:"ng-repeat" => "entry in rowempls", :"ng-show" => "getEmployeeName(entry) != null"}
+        {{getEmployeeName(entry)}}
+        = button_tag "Remove", :type => 'button', :"ng-click" => "delEmployee(entry.id)"
+      %label{:"ng-show" => "editID >= 0"} Add more
+      %select{:"ng-model" => "employee_id", :size => "1", :"ng-show" => "editID >= 0"}
+        %option{:"ng-repeat" => "entry in employees|orderBy:'surname'", :value => "{{entry.id}}"}
+          {{entry.surname + " " + entry.name}}
+      = button_tag "Add", :type => 'button', :"ng-click" => "addEmployee()", :"ng-show" => "editID >= 0"
+
+    .span3
+      %label Specifications
+      = text_area_tag "specs", nil, :rows => "5", :"ng-model" => "w.specs"
+
+      %label Applications
+      = text_area_tag "apps", nil, :rows => "5", :"ng-model" => "w.apps"
+
+      %label Notes
+      = text_area_tag "notes", nil, :rows => "5", :"ng-model" => "w.notes"
+
+

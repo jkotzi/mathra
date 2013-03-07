@@ -1,0 +1,23 @@
+%div{:"ng-controller" => "warCtrl"}
+  .span2
+    %h3 Warehouse Menu
+
+    <br>
+    %h6 Listing Warehouses
+    %label Search Filter
+    %input{:type => "text", :"ng-model" => "search.$"}
+    %table{:"ng-repeat" => "entry in warehouses | filter:search", :width => "500px"}
+      %tr
+        %td
+          = link_to "{{entry.name}}", "#", :"ng-click" => "editWare(entry.id)"
+        %td{:align => "right"}
+          = button_tag "Remove", :type => 'button', :"ng-click" => "delWare(entry.id)"
+
+  .span10
+    %h3 Warehouse Form
+    = render "warehouses/form"
+    = button_tag "Save New", :type => 'button', :"ng-show" => "editID == -1", :"ng-click" => "saveWare()"
+    = button_tag "Update", :type => 'button', :"ng-show" => "editID >= 0", :"ng-click" => "updateWare()"
+    = button_tag "test", :type => 'button', :"ng-click" => "test()"
+    <br><br>
+    = button_to "Back", root_path

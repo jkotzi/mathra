@@ -1,0 +1,85 @@
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  - name
+  records: 
+  - - 1
+    - admin@xx.xx
+    - $2a$10$x9H/fFjxPIOnAjd9JAJap.JTNWOZhmQMat39lzAV6AnpURgM/cM1q
+    - 
+    - 
+    - 
+    - 2
+    - '2013-02-13 07:58:25.349031'
+    - '2013-02-13 07:55:58.986784'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2013-02-13 07:53:47.487455'
+    - '2013-02-13 07:58:25.349797'
+    - Administrator
+  - - 2
+    - usr1@xx.xx
+    - $2a$10$vvYQjIxYVqTdL3sCqaaCEeGhz6Gq95TgSOnOvEx3Vu/ZZHRnSjQbS
+    - 
+    - 
+    - 
+    - 1
+    - '2013-02-13 07:58:43.440254'
+    - '2013-02-13 07:58:43.440254'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2013-02-13 07:58:43.210825'
+    - '2013-02-13 07:58:43.440843'
+    - usr1
+
+---
+roles:
+  columns:
+  - id
+  - name
+  - resource_id
+  - resource_type
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin
+    - 
+    - 
+    - '2013-02-13 07:53:46.934767'
+    - '2013-02-13 07:53:46.934767'
+  - - 2
+    - user
+    - 
+    - 
+    - '2013-02-13 07:53:47.080346'
+    - '2013-02-13 07:53:47.080346'
+  - - 3
+    - VIP
+    - 
+    - 
+    - '2013-02-13 07:53:47.223848'
+    - '2013-02-13 07:53:47.223848'
+
+---
+users_roles:
+  columns:
+  - user_id
+  - role_id
+  records: 
+  - - 1
+    - 1

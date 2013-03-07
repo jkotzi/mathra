@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130213075248) do
+ActiveRecord::Schema.define(:version => 20130213094826) do
+
+  create_table "employees", :force => true do |t|
+    t.string   "login"
+    t.string   "surname"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "hardwaretypes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20130213075248) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "rowempls", :force => true do |t|
+    t.integer  "warehouse_id"
+    t.integer  "employee_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -49,5 +70,17 @@ ActiveRecord::Schema.define(:version => 20130213075248) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "warehouses", :force => true do |t|
+    t.string   "name"
+    t.string   "serial"
+    t.integer  "hardwaretype_id"
+    t.date     "pdate"
+    t.text     "specs"
+    t.text     "apps"
+    t.text     "notes"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end

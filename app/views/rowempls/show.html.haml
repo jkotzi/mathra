@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Warehouse:
+  = @rowempl.warehouse_id
+%p
+  %b Employee:
+  = @rowempl.employee_id
+
+= link_to 'Edit', edit_rowempl_path(@rowempl)
+\|
+= link_to 'Back', rowempls_path

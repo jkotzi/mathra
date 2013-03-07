@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.11'
-gem 'sqlite3'
+gem 'mysql2'
+gem 'yaml_db'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'angularjs-rails'
 end
 gem 'jquery-rails'
 gem "haml", ">= 3.1.7"
@@ -29,3 +31,4 @@ gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "libv8", ">= 3.11.8"
 gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
+gem "gon"

@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @hardwaretype.name
+
+= link_to 'Edit', edit_hardwaretype_path(@hardwaretype)
+\|
+= link_to 'Back', hardwaretypes_path
