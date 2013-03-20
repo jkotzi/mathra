@@ -1,15 +1,14 @@
-= link_to "Home", root_path, :class => 'brand'
+= link_to t("index.home"), root_path, :class => 'brand'
 %ul.nav
   - if user_signed_in?
     %li
-      = link_to 'Warehouses', warehouses_path
+      = link_to t("warehouses.title"), warehouses_path
     %li
       = link_to "Employees", employees_path
     %li
       = link_to 'Hardware Types', hardwaretypes_path
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-
   - else
     %li
       = link_to 'Login', new_user_session_path
@@ -24,3 +23,10 @@
   - else
     %li
       = #link_to 'Sign up', new_user_registration_path
+  %li
+    = link_to_unless_current (image_tag "flag_eng.png"), locale: "en"
+  %li
+    = link_to_unless_current (image_tag "flag_gr.png"), locale: "gr"
+
+
+

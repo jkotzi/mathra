@@ -1,7 +1,8 @@
 %div{:"ng-controller" => "warCtrl"}
   .span2
-    %h3 Warehouse Menu
-
+    %h3
+      = t "warehouses.title"
+    = button_tag "Add New", :type => 'button', :"ng-click" => "clearFrm()"
     <br>
     %h6 Listing Warehouses
     %label Search Filter
@@ -18,6 +19,5 @@
     = render "warehouses/form"
     = button_tag "Save New", :type => 'button', :"ng-show" => "editID == -1", :"ng-click" => "saveWare()"
     = button_tag "Update", :type => 'button', :"ng-show" => "editID >= 0", :"ng-click" => "updateWare()"
-    = button_tag "test", :type => 'button', :"ng-click" => "test()"
     <br><br>
     = button_to "Back", root_path

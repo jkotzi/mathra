@@ -41,20 +41,24 @@
       tmp.employee_id = $scope.w.employee_id
       console.log tmp
       rowemplsDB.save({}, tmp, (resource2) ->
-        console.log "cool"
+        $scope.rowempls = rowemplsDB.query()
+        console.log "Success"
       , (response2) ->
-        console.log("Failed 2")
+        console.log("Failed saving the employee row")
       )
     , (response) ->
-      console.log("Failed")
+      console.log("Failed Saving")
     )
 
   $scope.editWare = (e_id) ->
     $scope.w = new Object if !$scope.w
     warehousesDB.get({id: e_id}, (resource) ->
       $scope.w = resource
+      #alert($scope.w.pdate.getFullYear())
       $scope.editID = resource.id
       $scope.state = 2
+      tmp = new Date($scope.w.pdate)
+      $scope.w.pdate = tmp.format("dd-mm-yyyy")
       console.log $scope.w
     , (response) ->
       console.log("Failed")
@@ -109,9 +113,9 @@
     if data.warehouse_id == $scope.editID
       for e in $scope.employees
         if data.employee_id == e.id
-          str = e.surname + " " + e.name
+          tmp = new Date(data.created_at)
+          str = e.surname + " " + e.name + " " + tmp.format("dd-mm-yyyy")
           return str
-
 
   $scope.test = ->
     alert("test")

@@ -21,7 +21,7 @@
           {{entry.surname + " " + entry.name}}
 
       %label{:"ng-show" => "editID >= 0"} Employee History
-      %li{:"ng-repeat" => "entry in rowempls", :"ng-show" => "getEmployeeName(entry) != null"}
+      %li{:"ng-repeat" => "entry in rowempls|orderBy:'created_at'", :"ng-show" => "getEmployeeName(entry) != null"}
         {{getEmployeeName(entry)}}
         = button_tag "Remove", :type => 'button', :"ng-click" => "delEmployee(entry.id)"
       %label{:"ng-show" => "editID >= 0"} Add more

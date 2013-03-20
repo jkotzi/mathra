@@ -7,6 +7,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'angularjs-rails'
+  gem 'ng-rails-csrf', :git => "git://github.com/xrd/ng-rails-csrf.git"
 end
 gem 'jquery-rails'
 gem "haml", ">= 3.1.7"

@@ -1,4 +1,7 @@
-@app = angular.module("Mathra", ["ngResource"])
+@app = angular.module("Mathra", ["ngResource", "ng-rails-csrf"]).config(['$httpProvider', ($httpProvider) ->
+  $httpProvider.defaults.withCredentials = true
+  ])
+
 @app.factory "rowemplsDB", ($resource) ->
   $resource("/rowempls/:id", {id: "@id"},
     {update: {method: "PUT"}}

@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   # GET /employees
   # GET /employees.json

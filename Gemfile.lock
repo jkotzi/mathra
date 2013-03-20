@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/xrd/ng-rails-csrf.git
+  revision: 171e853b3cf793d96659f4157a50602ab57e85f8
+  specs:
+    ng-rails-csrf (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -228,6 +234,7 @@ DEPENDENCIES
   launchy (>= 2.1.2)
   libv8 (>= 3.11.8)
   mysql2
+  ng-rails-csrf!
   quiet_assets (>= 1.0.1)
   rails (= 3.2.11)
   rolify (>= 3.2.0)

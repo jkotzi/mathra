@@ -1,5 +1,5 @@
 class RowemplsController < ApplicationController
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   # GET /rowempls
   # GET /rowempls.json
@@ -37,6 +37,7 @@ class RowemplsController < ApplicationController
   # GET /rowempls/1/edit
   def edit
     @rowempl = Rowempl.find(params[:id])
+    @dd = Date.parse('2011-07-20').utc.to_i*1000
   end
 
   # POST /rowempls
