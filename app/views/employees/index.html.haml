@@ -6,7 +6,7 @@
     <br>
     %h6 Listing employees
 
-    %table{:"ng-repeat" => "entry in employees", :width => "500px"}
+    %table{:"ng-repeat" => "entry in employees", :width => "250px"}
       %tr
         %td
           = link_to "{{entry.surname + ' ' + entry.name}}", "#", :"ng-click" => "editEmpl(entry.id)"
@@ -16,7 +16,8 @@
   .span10
     %h3 Employee Form
     = render "employees/form"
-    = button_tag "Save New", :type => 'button', :"ng-show" => "state == 1", :"ng-click" => "saveEmpl()"
+    = button_tag "test", :type => 'button', :"onclick" => "test()"
+    = button_tag "Save New", :type => 'button', :id => "xaxa2", :"ng-show" => "state == 1", :"ng-click" => "saveEmpl()"
     = button_tag "Update", :type => 'button', :"ng-show" => "state == 2", :"ng-click" => "updateEmpl()"
     <br><br>
     = button_to "Back", root_path

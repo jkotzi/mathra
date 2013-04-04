@@ -14,6 +14,8 @@
     $scope.state = 1
 
   $scope.saveEmpl = ->
+    $("#xaxa").hide()
+    $("#xaxa2").hide()
     $scope.em = new Object if !$scope.em
     employeesDB.save({}, $scope.em, (resource) ->
       $scope.employees.push(resource)

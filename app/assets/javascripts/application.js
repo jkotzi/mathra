@@ -20,3 +20,9 @@
 //= require angularinit
 //= require_tree .
 
+function test()
+{
+    alert(2);
+    $("#xaxa").hide();
+    //document.getElementById("xaxa").innerHTML = "aaaaaaa";
+}
